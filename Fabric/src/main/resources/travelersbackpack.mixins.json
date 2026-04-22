@@ -1,0 +1,32 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.tiviacz.travelersbackpack.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "plugin": "com.tiviacz.travelersbackpack.TravelersBackpackMixinPlugin",
+  "mixins": [
+    "AbstractContainerMenuMixin",
+    "ItemEntityMixin",
+    "ItemStackMixin",
+    "LevelResourceMixin",
+    "LivingEntityPriorityMixin",
+    "MobEntityMixin",
+    "PlayerMixin",
+    "ShulkerBoxBlockEntityMixin",
+    "abilities.EndermanEntityMixin",
+    "abilities.ExperienceOrbEntityMixin",
+    "abilities.GhastEntityMixin",
+    "abilities.LootTableMixin",
+    "abilities.SmallFireballEntityMixin"
+  ],
+  "client": [
+    "AbstractContainerScreenMixin",
+    "GuiMixin",
+    "HumanoidRenderStateMixin",
+    "HumoanoidMobRenderer",
+    "LocalPlayerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

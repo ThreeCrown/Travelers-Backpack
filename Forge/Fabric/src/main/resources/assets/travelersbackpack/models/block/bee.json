@@ -1,0 +1,5 @@
+{
+  "fabric:type": "travelersbackpack:backpack",
+  "backpackTexture": "travelersbackpack:block/backpack/bee",
+  "particle": "minecraft:block/yellow_wool"
+}

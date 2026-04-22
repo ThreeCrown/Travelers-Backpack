@@ -1,0 +1,17 @@
+package com.tiviacz.travelersbackpack.init;
+
+import com.tiviacz.travelersbackpack.TravelersBackpack;
+import com.tiviacz.travelersbackpack.fluids.PotionFluid;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.level.material.FlowingFluid;
+
+public class ModFluids {
+    public static final FlowingFluid POTION_STILL = register("potion_still", new PotionFluid.Still());
+    public static final FlowingFluid POTION_FLOWING = register("potion_flowing", new PotionFluid.Flowing());
+
+    private static FlowingFluid register(String name, FlowingFluid flowableFluid) {
+        return Registry.register(BuiltInRegistries.FLUID, Identifier.fromNamespaceAndPath(TravelersBackpack.MODID, name), flowableFluid);
+    }
+}

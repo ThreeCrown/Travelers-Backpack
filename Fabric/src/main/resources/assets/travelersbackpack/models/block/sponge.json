@@ -1,0 +1,5 @@
+{
+  "fabric:type": "travelersbackpack:backpack",
+  "backpackTexture": "travelersbackpack:block/backpack/sponge",
+  "particle": "minecraft:block/sponge"
+}

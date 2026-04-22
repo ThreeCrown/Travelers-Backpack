@@ -1,0 +1,9 @@
+{
+  "type": "travelersbackpack:backpack_upgrade",
+  "addition": "#travelersbackpack:backpack_upgrades",
+  "base": "travelersbackpack:squid",
+  "result": {
+    "id": "travelersbackpack:squid"
+  },
+  "template": "#c:leathers"
+}

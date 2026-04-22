@@ -1,0 +1,5 @@
+{
+  "fabric:type": "travelersbackpack:backpack",
+  "backpackTexture": "travelersbackpack:block/backpack/ghast",
+  "particle": "minecraft:block/light_gray_wool"
+}

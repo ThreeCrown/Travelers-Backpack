@@ -1,0 +1,5 @@
+{
+  "fabric:type": "travelersbackpack:backpack",
+  "backpackTexture": "travelersbackpack:block/backpack/iron_golem",
+  "particle": "minecraft:block/iron_block"
+}

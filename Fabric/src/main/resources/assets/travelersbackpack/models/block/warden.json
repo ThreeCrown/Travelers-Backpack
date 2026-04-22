@@ -1,0 +1,5 @@
+{
+  "fabric:type": "travelersbackpack:backpack",
+  "backpackTexture": "travelersbackpack:block/backpack/warden",
+  "particle": "minecraft:block/sculk_catalyst_side"
+}

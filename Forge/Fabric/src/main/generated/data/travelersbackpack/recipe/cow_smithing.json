@@ -1,0 +1,9 @@
+{
+  "type": "travelersbackpack:backpack_upgrade",
+  "addition": "#travelersbackpack:backpack_upgrades",
+  "base": "travelersbackpack:cow",
+  "result": {
+    "id": "travelersbackpack:cow"
+  },
+  "template": "#c:leathers"
+}

@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${mod_version}",
+  "accessWidener": "travelersbackpack.accesswidener",
+  "name": "${mod_display_name}",
+  "description": "${mod_description}",
+  "authors": [
+    "${mod_authors}"
+  ],
+  "contact": {
+    "homepage": "${mod_display_url}",
+    "issues": "${mod_issue_tracker_url}"
+  },
+  "license": "${mod_license}",
+  "icon": "assets/${mod_id}/textures/logo.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.tiviacz.travelersbackpack.datagen.ModDataGeneration"
+    ],
+    "main": [
+      "com.tiviacz.travelersbackpack.TravelersBackpack"
+    ],
+    "client": [
+      "com.tiviacz.travelersbackpack.TravelersBackpackClient"
+    ],
+    "jei_mod_plugin": [
+      "com.tiviacz.travelersbackpack.compat.jei.TravelersBackpackPlugin"
+    ]
+  },
+  "mixins": [
+    "travelersbackpack.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "fabric-api": ">=0.120.0",
+    "minecraft": "${minecraft_version_range}",
+    "java": ">=25",
+    "forgeconfigapiport": "*"
+  },
+  "breaks": {
+    "accessories": "<1.4.3-beta+1.21.10",
+    "yigd": "<2.4.13"
+  }
+}

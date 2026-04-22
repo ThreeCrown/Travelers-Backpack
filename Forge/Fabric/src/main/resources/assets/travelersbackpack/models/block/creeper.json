@@ -1,0 +1,5 @@
+{
+  "fabric:type": "travelersbackpack:backpack",
+  "backpackTexture": "travelersbackpack:block/backpack/creeper",
+  "particle": "minecraft:block/lime_concrete"
+}

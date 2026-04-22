@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "#c:ingots/netherite",
+  "base": "travelersbackpack:diamond",
+  "result": {
+    "id": "travelersbackpack:netherite"
+  },
+  "template": "minecraft:netherite_upgrade_smithing_template"
+}

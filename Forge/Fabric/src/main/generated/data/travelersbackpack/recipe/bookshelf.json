@@ -1,0 +1,17 @@
+{
+  "type": "travelersbackpack:backpack_shaped",
+  "category": "misc",
+  "key": {
+    "A": "#minecraft:planks",
+    "B": "minecraft:book",
+    "C": "travelersbackpack:standard"
+  },
+  "pattern": [
+    "AAA",
+    "BCB",
+    "AAA"
+  ],
+  "result": {
+    "id": "travelersbackpack:bookshelf"
+  }
+}

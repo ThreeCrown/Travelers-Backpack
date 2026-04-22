@@ -1,0 +1,154 @@
+plugins {
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
+	id 'maven-publish'
+}
+
+version = project.mod_version
+group = project.mod_group_id
+
+base {
+	archivesName = "${project.mod_id}-${project.mod_loader}-${project.minecraft_version}"
+}
+
+loom {
+	accessWidenerPath = file("src/main/resources/travelersbackpack.accesswidener")
+}
+
+repositories {
+	maven {
+		url "https://cursemaven.com"
+		content {
+			includeGroup "curse.maven"
+		}
+	}
+	maven {
+		url 'https://api.modrinth.com/maven'
+	}
+}
+
+fabricApi {
+	configureDataGeneration {
+		client = true
+	}
+}
+
+dependencies {
+	// To change the versions see the gradle.properties file
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+	//REQUIRED
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+	//Forge Config Api Port
+	implementation("maven.modrinth:forge-config-api-port:RXbL43Lt")
+	api 'com.electronwill.night-config:core:3.8.1'
+	api 'com.electronwill.night-config:toml:3.8.1'
+
+	//Cardinal Components
+	//runtimeOnly("dev.onyxstudios.cardinal-components-api:cardinal-components-base:${project.cca_version}")
+	//runtimeOnly("dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${project.cca_version}")
+
+	//Required for Polymorph
+	//compileOnly "dev.onyxstudios.cardinal-components-api:cardinal-components-block:${project.cca_version}"
+
+	//Cloth Config
+	//compileOnly("dev.architectury:architectury-fabric:${project.architectury_version}")
+	//compileOnly("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}")
+
+	//OPTIONAL
+
+	//Crafting Tweaks
+	compileOnly("maven.modrinth:balm:I9GF44A2")
+	compileOnly("maven.modrinth:crafting-tweaks:ZlYheOfe")
+	//modApi("net.blay09.mods:kuma-api-fabric:21.10.5+1.21.10")
+
+	//Trash Slot
+	implementation("maven.modrinth:trashslot:AhKl6yxJ")
+	implementation("maven.modrinth:balm:CXPaGqRl")
+
+	//ModMenu
+	implementation("maven.modrinth:modmenu:jvjwXH6l")
+
+	//VinURL
+	compileOnly("maven.modrinth:vinurl:AinwJJKy")
+
+	//Trinkets
+	implementation "maven.modrinth:trinkets-updated:up7hvrTJ" //Not Updated
+
+	//Accessories
+	//compileOnly("io.wispforest:accessories-fabric:${project.accessories_version}")
+    //modImplementation("maven.modrinth:owo-lib:dZPuIa4j")
+	//modImplementation("io.wispforest:endec:0.1.8")
+	//modImplementation("io.wispforest.endec:gson:0.1.5")
+	//modImplementation("io.wispforest.endec:netty:0.1.4")
+
+	//REI
+    //compileOnly("me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}") //Not Updated
+
+	//JEI
+	implementation ("maven.modrinth:jei:cHJ1j59c")
+
+	//Polymorph
+	//compileOnly("maven.modrinth:polymorph:j4jPy88h")
+
+	//Comforts
+	//compileOnly ("maven.modrinth:comforts:vUdakIzK")
+
+	//EMI
+	//compileOnly("dev.emi:emi-fabric:${project.emi_version}")
+
+	//Universal Graves
+    compileOnly("maven.modrinth:universal-graves:rZHOziFD")
+
+	//Mouse Tweaks
+	//compileOnly "curse.maven:mouse-tweaks-60089:5437294"
+
+	//TAN
+	//compileOnly("curse.maven:tan-246391:5715303")
+	//compileOnly("curse.maven:glitchcore-955399:5483774")
+
+	//Gravestones
+	compileOnly("maven.modrinth:pneumono_gravestones:40yhXn3d")
+	//compileOnly("maven.modrinth:pneumono_core:Y03YVYzM")
+}
+
+processResources {
+	var replaceProperties = [
+			minecraft_version      : minecraft_version,
+			minecraft_version_range: minecraft_version_range,
+			mod_id                 : mod_id,
+			mod_name               : mod_name,
+			mod_display_name       : mod_display_name,
+			mod_license            : mod_license,
+			mod_version            : mod_version,
+			mod_authors            : mod_authors,
+			mod_description        : mod_description,
+			mod_display_url        : mod_display_url,
+			mod_issue_tracker_url  : mod_issue_tracker_url,
+	]
+	inputs.properties replaceProperties
+
+	filesMatching('fabric.mod.json') {
+		expand replaceProperties
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 25
+}
+
+java {
+	//withSourcesJar()
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
+}
+
+jar {
+	inputs.property "archivesName", project.base.archivesName
+
+	from("LICENSE") {
+		rename { "${it}_${inputs.properties.archivesName}"}
+	}
+}

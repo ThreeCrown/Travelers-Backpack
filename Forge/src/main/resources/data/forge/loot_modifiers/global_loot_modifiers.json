@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "entries": [
+    "travelersbackpack:hay",
+    "travelersbackpack:bat",
+    "travelersbackpack:iron_golem",
+    "travelersbackpack:abandoned_mineshaft_inject_standard",
+    "travelersbackpack:simple_dungeon_inject_standard",
+    "travelersbackpack:desert_pyramid_inject_standard"
+  ]
+}

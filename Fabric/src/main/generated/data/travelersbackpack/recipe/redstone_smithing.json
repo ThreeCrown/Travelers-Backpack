@@ -1,0 +1,9 @@
+{
+  "type": "travelersbackpack:backpack_upgrade",
+  "addition": "#travelersbackpack:backpack_upgrades",
+  "base": "travelersbackpack:redstone",
+  "result": {
+    "id": "travelersbackpack:redstone"
+  },
+  "template": "#c:leathers"
+}

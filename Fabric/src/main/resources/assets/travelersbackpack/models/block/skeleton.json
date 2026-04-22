@@ -1,0 +1,5 @@
+{
+  "fabric:type": "travelersbackpack:backpack",
+  "backpackTexture": "travelersbackpack:block/backpack/skeleton",
+  "particle": "minecraft:block/bone_block_side"
+}
